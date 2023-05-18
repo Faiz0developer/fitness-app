@@ -48,14 +48,14 @@ const ExerciseDetails = () => {
   console.log(exerciseDetail);
 
   return (
-    <div className="mt-10 p-10">
+    <div className="mt-10 md:p-10">
       {exerciseDetail.slice(totalPage.start, totalPage.end).map((exercise) => {
         return (
           <div
             key={exercise.name}
-            className="flex mx-3 bg-slate-400 my-4 p-10 rounded-md"
+            className="flex flex-col md:flex-row mx-3 bg-slate-400 my-4 p-4 md:p-10 rounded-md"
           >
-            <div className="w-[35%] border-r-2">
+            <div className="w-full md:w-[35%] py-4 md:py-0 border-b-2 md:border-b-0 md:border-r-2">
               <h1 className="text-4xl font-medium text-cyan-900 ">
                 {exercise.name}
               </h1>
@@ -78,7 +78,7 @@ const ExerciseDetails = () => {
                 <span className="text-indigo-900">{exercise.difficulty}</span>
               </h1>
             </div>
-            <p className="w-[75%] p-4 text-yellow-900 text-lg">
+            <p className="w-full md:w-[75%] py-4 md:p-4 text-yellow-900 text-lg">
               {exercise.instructions}
             </p>
           </div>

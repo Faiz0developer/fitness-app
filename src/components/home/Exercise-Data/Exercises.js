@@ -14,27 +14,11 @@ const Exercises = ({
   const [page, setPage] = useState({ startPoint: start, endPoint: end });
   const [selectedPage, setSelectedPage] = useState(1);
 
-  // const handleInfiniteScroll = () => {
-  //   if (
-  //     window.scrollY + window.innerHeight + 1 >=
-  //     document.documentElement.scrollHeight
-  //   ) {
-  //     setEnd(end + 6);
-  //     setStart(start + 6);
-  //     setPage({
-  //       startPoint: start,
-  //       endPoint: end,
-  //     });
-  //   }
-  // };
-
   useEffect(() => {
     const fetchFullExerciseData = () => {
       setExercises(fullExerciseData);
     };
     fetchFullExerciseData();
-    // window.addEventListener("scroll", handleInfiniteScroll);
-    // return () => window.removeEventListener("scroll", handleInfiniteScroll);
   }, [page]);
 
   const newData = !!searchData
